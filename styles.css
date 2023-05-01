@@ -1,0 +1,186 @@
+:root {
+  --light-cold: #8ecae6;
+  --dark-cold: #219ebc;
+  --light-warm: #ffb703;
+  --dark-warm: #fb8500;
+  --dark: #023047;
+  --light: #eeeeee;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+.limiter {
+  width: 80vmin;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+header,
+footer {
+  background-color: var(--dark-cold);
+}
+
+.header,
+.main,
+.footer {
+  padding: 1em 0;
+}
+fieldset {
+  border-radius: 5px;
+  border-color: var(--light-cold);
+}
+
+.row {
+  float: left;
+  width: 100%;
+}
+.row > div {
+  width: calc(100% / 7);
+  float: left;
+}
+.square-holder {
+  position: relative;
+}
+
+.square-sizer {
+  padding-top: 100%;
+}
+
+.square-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.cell {
+  background-color: var(--light-warm);
+}
+
+.way {
+  background-color: var(--dark-cold);
+}
+
+.wall {
+  background-color: #fb8500;
+}
+
+.playersymbol,
+.target,
+.direction-arrow {
+  background-size: 600% 100%;
+  background-image: url(images/symbols.svg);
+}
+
+.playersymbol {
+  background-position: 0%;
+}
+
+.target {
+  background-position: 20%;
+}
+
+.size-bar {
+  clear: both;
+  text-align: right;
+  padding-top: 0.5em;
+}
+
+.size-bar > button {
+  width: 5em;
+  margin-left: 0.5em;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--dark-cold);
+}
+
+.size-bar > button:hover {
+  background-color: var(--dark);
+  color: var(--light);
+  cursor: pointer;
+}
+.square-holder {
+  width: 90%;
+  max-width: 10em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.direction-arrow,
+.direction-spacer {
+  width: calc(33% - 2px);
+  height: calc(33% - 2px);
+  float: left;
+  border: 1px solid var(--dark-cold);
+  background-color: var(--light-warm);
+}
+
+.direction-arrow:hover {
+  background-color: var(--dark-warm);
+  cursor: pointer;
+}
+
+.direction-arrow.up {
+  background-position: 40%;
+}
+.direction-arrow.right {
+  background-position: 60%;
+}
+.direction-arrow.down {
+  background-position: 80%;
+}
+.direction-arrow.left {
+  background-position: 100%;
+}
+
+.popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.popup > div {
+  width: 15em;
+  background-color: var(--light);
+  padding: 3em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5em;
+  border: 1px solid black;
+}
+
+@media (orientation: landscape) {
+  .limiter {
+    width: 80%;
+    max-width: 1000px;
+  }
+  .main {
+    display: flex;
+    justify-content: space-around;
+  }
+  .main > fieldset {
+    width: 45%;
+  }
+}
